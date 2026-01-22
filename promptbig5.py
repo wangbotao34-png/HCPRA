@@ -19,9 +19,7 @@ def safe_parse_personality_response(response):
         return None
 
 def ask_personality_until_success(agent, prompt, llm):
-    """
-    循环请求模型，直到获得符合格式的解析结果
-    """
+
     while True:
         response = llm.chat(agent, prompt)
         parsed_data = safe_parse_personality_response(response)
